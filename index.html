@@ -10,40 +10,56 @@
     body {
       margin: 0;
       font-family: 'Share Tech Mono', monospace;
-      background: linear-gradient(#1a1a1a, #2c2c2c);
+      background: #111;
       color: white;
-      background-image: url('https://www.transparenttextures.com/patterns/fog.png');
+      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
       background-size: cover;
+      animation: fog 5s ease-in-out infinite;
     }
+
+    @keyframes fog {
+      0% { background-color: #111; }
+      50% { background-color: #222; }
+      100% { background-color: #111; }
+    }
+
     header {
       text-align: center;
-      padding: 40px 20px;
+      padding: 80px 20px;
       background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     }
-    header img {
-      width: 200px;
-      max-width: 90%;
-    }
-    h1 {
-      margin-top: 20px;
-      font-size: 2rem;
+
+    header h1 {
+      font-size: 3rem;
       letter-spacing: 2px;
+      margin-top: 20px;
+      color: #00FF00;
     }
+
     .content {
       padding: 30px;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: auto;
+      text-align: center;
     }
+
     .section {
       margin-bottom: 50px;
-    }
-    .section img {
-      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
+
+    .section h2 {
+      font-size: 2rem;
+      color: #00FF00;
+      text-transform: uppercase;
+    }
+
     .trailer-placeholder {
-      background: #111;
+      background: #222;
       padding: 60px;
       text-align: center;
       border-radius: 10px;
@@ -51,29 +67,25 @@
       color: #aaa;
       font-size: 1.2rem;
     }
+
     footer {
       text-align: center;
       padding: 20px;
       background: #111;
       color: #666;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="A_logo_for_the_game_titled_\"Ump_5x5:_Fog_Intenso\"_.png" alt="Logo Ump 5x5">
     <h1>Ump 5x5: Fog Intenso</h1>
   </header>
   <div class="content">
     <div class="section">
       <h2>Sobre o Jogo</h2>
-      <p>Prepare-se para entrar na névoa... "Ump 5x5: Fog Intenso" é um jogo tenso e estratégico onde a visibilidade é sua maior inimiga. Cada passo conta. Cada decisão pode ser a última.</p>
-    </div>
-    <div class="section">
-      <h2>Imagens do Jogo</h2>
-      <img src="https://cdn.discordapp.com/attachments/1353436271481192479/1362494196384006164/image0.jpg" alt="Cena 1 do jogo">
-      <br /><br />
-      <img src="https://cdn.discordapp.com/attachments/1353436271481192479/1362494140721664000/image0.jpg" alt="Cena 2 do jogo">
+      <p><strong>Ump 5x5: Fog Intenso</strong> é um jogo tático e imersivo onde equipes de 5 jogadores se enfrentam em batalhas intensas dentro de um nevoeiro denso e escuro, que limita a visibilidade e aumenta o desafio. As equipes competem em uma luta brutal, com a possibilidade de **team kill**, ou seja, o risco de eliminar os próprios aliados. A única maneira de sobreviver e vencer é confiar na estratégia, no trabalho em equipe e nas habilidades com a **UMPS**.</p>
+      <p>Prepare-se para um confronto cheio de tensão onde cada passo pode ser fatal. O jogo é desenvolvido na plataforma STRUCKD, trazendo uma experiência única de combate no estilo 5x5.</p>
     </div>
     <div class="section">
       <h2>Trailer</h2>
