@@ -6,6 +6,30 @@
   <title>Ump 5x5: Fog Intenso</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #00ff88;
+      --bg-gradient: radial-gradient(circle at top, #0f0f0f, #000);
+      --text-color: #e0e0e0;
+      --section-bg: #0d0d0d;
+    }
+
+    body.blue-theme {
+      --primary-color: #00bfff;
+      --bg-gradient: radial-gradient(circle at top, #001f3f, #000);
+    }
+
+    body.white-theme {
+      --primary-color: #444;
+      --bg-gradient: radial-gradient(circle at top, #fff, #ddd);
+      --text-color: #111;
+      --section-bg: #f4f4f4;
+    }
+
+    body.red-theme {
+      --primary-color: #ff3c3c;
+      --bg-gradient: radial-gradient(circle at top, #2b0000, #000);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,12 +38,13 @@
 
     body {
       font-family: 'Share Tech Mono', monospace;
-      background: radial-gradient(circle at top, #0f0f0f, #000);
-      color: #e0e0e0;
+      background: var(--bg-gradient);
+      color: var(--text-color);
       min-height: 100vh;
       overflow-x: hidden;
       display: flex;
       flex-direction: column;
+      transition: background 0.5s, color 0.5s;
     }
 
     nav {
@@ -28,13 +53,13 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      border-bottom: 2px solid #00ff88;
+      border-bottom: 2px solid var(--primary-color);
       box-shadow: 0 2px 20px rgba(0, 255, 136, 0.1);
     }
 
     .logo {
       font-size: 1.5rem;
-      color: #00ff88;
+      color: var(--primary-color);
       letter-spacing: 2px;
     }
 
@@ -51,7 +76,7 @@
     }
 
     nav ul li a:hover {
-      color: #00ff88;
+      color: var(--primary-color);
     }
 
     header {
@@ -63,7 +88,7 @@
 
     header h1 {
       font-size: 3.5rem;
-      color: #00ff88;
+      color: var(--primary-color);
       text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
       margin-bottom: 1rem;
     }
@@ -83,7 +108,7 @@
     }
 
     .section {
-      background: #0d0d0d;
+      background: var(--section-bg);
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 0 25px rgba(0, 255, 136, 0.05);
@@ -92,10 +117,10 @@
     }
 
     .section h2 {
-      color: #00ff88;
+      color: var(--primary-color);
       font-size: 2rem;
       margin-bottom: 1rem;
-      border-left: 5px solid #00ff88;
+      border-left: 5px solid var(--primary-color);
       padding-left: 1rem;
       text-transform: uppercase;
     }
@@ -107,27 +132,11 @@
     }
 
     .neon-box {
-      border: 2px solid #00ff88;
+      border: 2px solid var(--primary-color);
       border-radius: 10px;
       padding: 1.5rem;
       background-color: #111;
       box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: #00ff88;
-      color: #000;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1rem;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: #00cc6e;
     }
 
     footer {
@@ -137,6 +146,28 @@
       color: #666;
       background-color: #000;
       border-top: 1px solid #111;
+      position: relative;
+    }
+
+    .theme-buttons {
+      margin-top: 1rem;
+    }
+
+    .theme-buttons button {
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      cursor: pointer;
+      font-family: inherit;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .theme-buttons button:hover {
+      background-color: var(--primary-color);
+      color: #000;
     }
   </style>
 </head>
@@ -166,13 +197,24 @@
       <div class="neon-box">
         <p><strong>Trailer:</strong> 23 de abril</p>
         <p><strong>Lançamento:</strong> 1º de maio</p>
-        
       </div>
     </div>
   </div>
 
   <footer>
     © 2025 UMP Studios • STRUCKD Game • Todos os direitos reservados
+    <div class="theme-buttons">
+      <button onclick="setTheme('')">Padrão</button>
+      <button onclick="setTheme('blue-theme')">Azul</button>
+      <button onclick="setTheme('white-theme')">Branco</button>
+      <button onclick="setTheme('red-theme')">Vermelho</button>
+    </div>
   </footer>
+
+  <script>
+    function setTheme(theme) {
+      document.body.className = theme;
+    }
+  </script>
 </body>
 </html>
