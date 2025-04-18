@@ -4,102 +4,175 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ump 5x5: Fog Intenso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
-    body {
+    * {
       margin: 0;
-      font-family: 'Share Tech Mono', monospace;
-      background: #111;
-      color: white;
-      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
-      background-size: cover;
-      animation: fog 5s ease-in-out infinite;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    @keyframes fog {
-      0% { background-color: #111; }
-      50% { background-color: #222; }
-      100% { background-color: #111; }
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      background: radial-gradient(circle at top, #0f0f0f, #000);
+      color: #e0e0e0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 2px solid #00ff88;
+      box-shadow: 0 2px 20px rgba(0, 255, 136, 0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      color: #00ff88;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00ff88;
     }
 
     header {
+      padding: 5rem 2rem;
       text-align: center;
-      padding: 80px 20px;
-      background: rgba(0, 0, 0, 0.7);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      background: linear-gradient(to bottom, #111, #000);
+      box-shadow: inset 0 -10px 50px rgba(0, 255, 136, 0.05);
     }
 
     header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-      margin-top: 20px;
-      color: #00FF00;
+      font-size: 3.5rem;
+      color: #00ff88;
+      text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #aaa;
     }
 
     .content {
-      padding: 30px;
+      flex: 1;
+      padding: 4rem 2rem;
       max-width: 1200px;
-      margin: auto;
-      text-align: center;
+      margin: 0 auto;
     }
 
     .section {
-      margin-bottom: 50px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      background: #0d0d0d;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 255, 136, 0.05);
+      margin-bottom: 2.5rem;
+      border: 1px solid #1f1f1f;
     }
 
     .section h2 {
+      color: #00ff88;
       font-size: 2rem;
-      color: #00FF00;
+      margin-bottom: 1rem;
+      border-left: 5px solid #00ff88;
+      padding-left: 1rem;
       text-transform: uppercase;
     }
 
-    .trailer-placeholder {
-      background: #222;
-      padding: 60px;
-      text-align: center;
+    .section p {
+      color: #ccc;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .neon-box {
+      border: 2px solid #00ff88;
       border-radius: 10px;
-      border: 2px dashed #555;
-      color: #aaa;
-      font-size: 1.2rem;
+      padding: 1.5rem;
+      background-color: #111;
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #00ff88;
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #00cc6e;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #111;
+      padding: 2rem;
+      font-size: 0.9rem;
       color: #666;
-      font-size: 1rem;
+      background-color: #000;
+      border-top: 1px solid #111;
     }
   </style>
 </head>
 <body>
+  <nav>
+    <div class="logo">UMP 5x5</div>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Trailer</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <h1>Ump 5x5: Fog Intenso</h1>
+    <h1>Fog Intenso</h1>
+    <p>Entre na batalha 5x5 mais obscura e brutal que você já viu. Prepare-se para o inesperado na névoa mais densa do mundo dos games.</p>
   </header>
+
   <div class="content">
     <div class="section">
-      <h2>Sobre o Jogo</h2>
-      <p><strong>Ump 5x5: Fog Intenso</strong> é um jogo tático e imersivo onde equipes de 5 jogadores se enfrentam em batalhas intensas dentro de um nevoeiro denso e escuro, que limita a visibilidade e aumenta o desafio. As equipes competem em uma luta brutal, com a possibilidade de **team kill**, ou seja, o risco de eliminar os próprios aliados. A única maneira de sobreviver e vencer é confiar na estratégia, no trabalho em equipe e nas habilidades com a **UMPS**.</p>
-      <p>Prepare-se para um confronto cheio de tensão onde cada passo pode ser fatal. O jogo é desenvolvido na plataforma STRUCKD, trazendo uma experiência única de combate no estilo 5x5.</p>
+      <h2>Sobre o Game</h2>
+      <p>Ump 5x5: Fog Intenso é um jogo tático onde a escuridão é tão perigosa quanto o inimigo. Com team kill ativo, cada decisão conta. Use sua UMP com sabedoria.</p>
     </div>
+
     <div class="section">
-      <h2>Trailer</h2>
-      <div class="trailer-placeholder">
-        Trailer será lançado em 23 de abril. Fique ligado!
+      <h2>Lançamento</h2>
+      <div class="neon-box">
+        <p><strong>Trailer:</strong> 23 de abril</p>
+        <p><strong>Lançamento:</strong> 1º de maio</p>
+        
       </div>
     </div>
-    <div class="section">
-      <h2>Data de Lançamento</h2>
-      <p>Lançamento oficial: <strong>1º de Maio</strong>. Marque no calendário!</p>
-    </div>
   </div>
+
   <footer>
-    &copy; 2025 Ump Studios. Todos os direitos reservados.
+    © 2025 UMP Studios • STRUCKD Game • Todos os direitos reservados
   </footer>
 </body>
 </html>
